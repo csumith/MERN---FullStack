@@ -44,6 +44,8 @@ function Main() {
             {/* <Route path={`/movie`} element={<MovieApi.js/>} /> */}
             <Route path={`/login`} element={ isLogged ? <Pnf/>:<Login/>} />
             <Route path={`/register`} element={ isLogged ? <Pnf/>: <Register/>} />
+            <Route path={`/movie`} element={<MovieApi/>} />
+
 
             {
               isLogged && isAdmin ? (
@@ -58,7 +60,6 @@ function Main() {
               isLogged && isUser ? (
                 <Route element={<AuthGuard/>}>
                 <Route path={`/user/dashboard`} element={<UserDashboard/>} />
-                <Route path={`/movie`} element={<MovieApi/>} />
                 
                 <Route path={`/user/edit/:id`} element={<EditUser/>} />
                 </Route>
